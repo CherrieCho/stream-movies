@@ -1,0 +1,12 @@
+/* 카드 커질때 잘림방지 */
+.carousel-container{
+  overflow: hidden;
+  height: 440px;
+}
+
+@media screen and (max-width: 490px){
+  .movie-slider {
+    margin: 0 30px; /* gap처럼 작동 */
+    box-sizing: border-box;
+  }
+}

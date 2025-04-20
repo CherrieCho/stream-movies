@@ -18,14 +18,12 @@ const Banner = () => {
 
   return (
     <div style={{
-      backgroundImage: "url(" + `https://image.tmdb.org/t/p/original${data?.results[2].poster_path}` + ")"}} className='banner'>
+      backgroundImage: "url(" + `https://image.tmdb.org/t/p/original${data?.results[5].poster_path}` + ")"}} className='banner'>
         <div className='text-white banner-text-area'>
-          <h1>{data.results[2].title}</h1>
-          <p className='banner-text-description'>{data.results[2].overview}</p>
+          <h1>{data.results[5].title}</h1>
+          <p className='banner-text-description'>{data.results[5].overview}</p>
         </div>
       </div>
-
-      // {data.results.map((item) => <div>{item.original_title}</div>)}
   )
 }
 

@@ -1,6 +1,6 @@
 .banner{
-  height: 56vh;
-  background-position: center;
+  height: 60vh;
+  background-position: 75% 20%;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -10,7 +10,7 @@
   background: linear-gradient(to top, black, transparent);
   position: absolute;
   left: 0;
-  height: 56vh;
+  height: 60vh;
   width: 100%
 }
 
@@ -30,6 +30,14 @@
 }
 
 @media screen and (max-width: 1024px){
+  .banner{
+    height: 56vh;
+  }
+
+  .banner::before{
+    height: 56vh;
+  }
+
   .banner-text-area{
     width:80%;
     padding-bottom: 2rem;
@@ -37,6 +45,10 @@
 }
 
 @media screen and (max-width: 575px){
+  .banner{
+    background-position: center;
+  }
+
   .banner-text-area{
     width:100%;
     padding-bottom: 2rem;
