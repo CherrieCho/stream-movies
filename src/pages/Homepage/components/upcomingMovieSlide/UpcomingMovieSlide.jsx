@@ -1,11 +1,8 @@
 import React from 'react'
 import Alert from 'react-bootstrap/Alert';
-import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import MovieCard from '../movieCard/MovieCard';
-import "./UpcomingMovieSlide.style.css";
-import {responsive} from "../../../../utils/reponsiveSlider"
 import { useUpcomingrMoviesQuery } from '../../../../hooks/useUpcomingMovies';
+import MovieSlider from '../../../../common/movieSlide/MovieSlider';
 
 
 const UpcomingMovieSlide = () => {
@@ -22,16 +19,7 @@ const UpcomingMovieSlide = () => {
 
   return (
     <div>
-    <h3>Upcoming Movies</h3>
-    <Carousel
-    infinite = {true}
-    centerMode={true}
-    itemClass = "movie-slider p-1"
-    containerClass = "carousel-container"
-    responsive={responsive}
->
-{data.results.map((movie, index) => <MovieCard movie={movie} key={index}/>)}
-</Carousel>
+      <MovieSlider title="Upcoming Movies" movies={data.results}/>
     </div>
     
   )
