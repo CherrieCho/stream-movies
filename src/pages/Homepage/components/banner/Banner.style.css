@@ -1,6 +1,38 @@
-.banner{
+.banner {
   height: 60vh;
-  background-position: 75% 20%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+
+.banner::before{
+  content: "";
+  background: linear-gradient(to top, black, transparent);
+  position: absolute;
+  left: 0;
+  height: 60vh;
+  width: 100%
+}
+
+.wrapText {
+  margin-left: 12%;
+}
+
+@media screen and (max-width: 1024px){
+  .banner{
+    height: 56vh;
+  }
+
+  .banner::before{
+    height: 56vh;
+  }
+}
+
+/* .banner{
+  height: 60vh;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -29,6 +61,7 @@
   z-index: 2;
 }
 
+
 @media screen and (max-width: 1024px){
   .banner{
     height: 56vh;
@@ -45,10 +78,6 @@
 }
 
 @media screen and (max-width: 575px){
-  .banner{
-    background-position: center;
-  }
-
   .banner-text-area{
     width:100%;
     padding-bottom: 2rem;
@@ -57,4 +86,4 @@
   .banner-text-description{
     display: none;
   }
-}
+}  */

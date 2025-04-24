@@ -1,5 +1,22 @@
 /* 카드 커질때 잘림방지 */
+.overflow{
+  overflow: hidden;
+  padding: 40px 0;
+}
+
 .carousel-container{
   overflow: visible;
   height: 440px;
+}
+
+@media screen and (max-width: 768px){
+  .carousel-container{
+    height: 380px;
+  }
+}
+
+@media screen and (max-width: 575px){
+  .carousel-container{
+    height: 300px;
+  }
 }

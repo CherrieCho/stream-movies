@@ -2,6 +2,8 @@ import React from 'react'
 import { usePopularMoviesQuery } from '../../../../hooks/usePopularMovies'
 import Alert from 'react-bootstrap/Alert';
 import "./Banner.style.css";
+import Carousel from 'react-bootstrap/Carousel';
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
 
@@ -17,13 +19,60 @@ const Banner = () => {
   }
 
   return (
-    <div style={{
-      backgroundImage: "url(" + `https://image.tmdb.org/t/p/original${data?.results[5].poster_path}` + ")"}} className='banner'>
-        <div className='text-white banner-text-area'>
-          <h1>{data.results[5].title}</h1>
-          <p className='banner-text-description'>{data.results[5].overview}</p>
+    <Carousel>
+      <Carousel.Item>
+        <Link to={`/movies/${data.results[2].id}`} style={{ textDecoration: "none", color: "white"}}>
+          <div style={{
+        backgroundImage: "url(" + `https://image.tmdb.org/t/p/original${data?.results[2].backdrop_path}` + ")"}} className='banner'>
+              <div className='wrapText'>
+                  <h1>{data.results[2].title}</h1>
+                  <div className="d-none d-md-block">
+                      <p>{data.results[2].overview}</p>
+                  </div>
+              </div>
+          </div>
+        </Link>
+    </Carousel.Item>
+    <Carousel.Item>
+      <Link to={`/movies/${data.results[4].id}`} style={{ textDecoration: "none", color: "white"}}>
+            <div style={{
+          backgroundImage: "url(" + `https://image.tmdb.org/t/p/original${data?.results[4].backdrop_path}` + ")"}} className='banner'>
+                <div className='wrapText'>
+                    <h1>{data.results[4].title}</h1>
+                    <div className="d-none d-md-block">
+                        <p>{data.results[4].overview}</p>
+                    </div>
+                </div>
+            </div>
+      </Link>
+    </Carousel.Item>
+    <Carousel.Item>
+      <Link to={`/movies/${data.results[12].id}`} style={{ textDecoration: "none", color: "white"}}>
+          <div style={{
+        backgroundImage: "url(" + `https://image.tmdb.org/t/p/original${data?.results[12].backdrop_path}` + ")"}} className='banner'>
+              <div className='wrapText'>
+                  <h1>{data.results[12].title}</h1>
+                  <div className="d-none d-md-block">
+                      <p>{data.results[12].overview}</p>
+                  </div>
+              </div>
+          </div>
+      </Link>
+    </Carousel.Item>
+    <Carousel.Item>
+      <Link to={`/movies/${data.results[19].id}`} style={{ textDecoration: "none", color: "white"}}>
+        <div style={{
+      backgroundImage: "url(" + `https://image.tmdb.org/t/p/original${data?.results[19].backdrop_path}` + ")"}} className='banner'>
+            <div className='wrapText'>
+                <h1>{data.results[19].title}</h1>
+                <div className="d-none d-md-block">
+                    <p>{data.results[19].overview}</p>
+                </div>
+            </div>
         </div>
-      </div>
+      </Link>
+    </Carousel.Item>
+</Carousel>
   )
 }
 

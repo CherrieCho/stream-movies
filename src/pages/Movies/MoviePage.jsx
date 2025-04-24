@@ -24,15 +24,15 @@ const MoviePage = () => {
     setPage(value);
   };
 
-  const getSize = () => window.innerWidth < 576 ? "small" : "medium";
-  const [paginationSize, setPaginationSize] = useState(getSize());
-
   //keyword가 바뀌면 페이지 초기화
   useEffect(() => {
     setPage(1);
   }, [keyword]);
 
   //페이지네이션 크기조절
+  const getSize = () => window.innerWidth < 576 ? "small" : "medium";
+  const [paginationSize, setPaginationSize] = useState(getSize());
+  
   useEffect(() => {
     const handleResize = () => {
       setPaginationSize(getSize());

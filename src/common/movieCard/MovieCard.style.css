@@ -1,11 +1,12 @@
 .movie-card{
-  width: 100%;
+  width: 80%;
   aspect-ratio: 2 / 3; 
-  background-size: cover;
+  background-size:cover;
   background-position: center;
   cursor: pointer;
   transition: 0.5s;
   border-radius: 10px;
+  margin: 0 auto;
 }
 
 .movie-card:hover{
