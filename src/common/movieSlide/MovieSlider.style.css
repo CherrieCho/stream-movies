@@ -13,6 +13,9 @@ h3{
   padding-left: 0.7em;
 }
 
+.react-multi-carousel-track{
+}
+
 @media screen and (max-width: 1200px){
   .carousel-container{
     height: 400px;
@@ -44,6 +47,12 @@ h3{
 @media screen and (max-width: 550px){
   .carousel-container{
     height: 310px;
+  }
+}
+
+@media screen and (max-width: 430px){
+  .carousel-container{
+    height: 270px;
   }
 }
 

@@ -1,0 +1,46 @@
+.bottom-contents{
+  margin-top: 40px;
+  padding: 0 4rem;
+}
+
+.movie-nav ul{
+  display: flex;
+  gap: 1em;
+  border-bottom: 0.5px solid gray;
+  margin: 0;
+}
+
+.movie-nav ul > li{
+  list-style: none;
+}
+
+li > button{
+  padding: 1em;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: x-large;
+}
+
+.recommend{
+  padding-left: 0;
+}
+
+.nav-contents{
+  margin-top: 3rem;
+}
+
+.not-selected{
+  color: gray;
+}
+
+@media screen and (max-width: 768px){
+  .bottom-contents{
+    padding: 0 2em;
+  }
+
+  .movie-nav ul{
+    padding: 0;
+  }
+}
