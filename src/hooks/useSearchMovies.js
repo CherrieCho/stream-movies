@@ -4,8 +4,8 @@ import api from "../utils/api";
 const fetchSearchMovie = ({ keyword, page }) => {
   //키워드 유무에 따라 다른 api 호출하기
   return keyword
-    ? api.get(`/search/movie?query=${keyword}&page=${page}`)
-    : api.get(`/movie/popular?page=${page}`);
+    ? api.get(`/search/movie?query=${keyword}&page=${page}&language=ko-KR`)
+    : api.get(`/movie/popular?page=${page}&language=ko-KR`);
 };
 
 export const useSearchMovieQuery = ({ keyword, page }) => {

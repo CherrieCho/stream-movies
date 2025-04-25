@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSearchMovieQuery } from '../../hooks/useSearchMovies'
 import { useSearchParams } from 'react-router-dom';
 import { Alert } from 'react-bootstrap';
-import MovieCard from '../../common/movieCard/MovieCard';
+import MoviePageCard from '../../common/movieCard/MoviePageCard';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -55,14 +55,14 @@ const MoviePage = () => {
   }
   return (
     <div>
-      <div>
-        {keyword? <h3>Search Results</h3> : <h3>Movies</h3>}
+      <div className='section-title'>
+        {keyword? <h1>Search Results</h1> : <h1>Movies</h1>}
       </div>
       <Container>
         <Row>
           {data?.results.map((movie, index) => (
             <Col xl={3} md={6} key={index} className='movie-result'>
-              <MovieCard movie={movie} key={index}/>
+              <MoviePageCard movie={movie} key={index}/>
             </Col>
           ))}
         </Row>
@@ -74,7 +74,7 @@ const MoviePage = () => {
                 page={page}
                 onChange={handlePageChange}
                 size={paginationSize}
-                color="primary"
+                color='secondary'
                 sx={{
                   '& .MuiPaginationItem-root': {
                     color: 'white', // 텍스트 색상 변경

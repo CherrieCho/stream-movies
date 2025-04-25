@@ -14,23 +14,23 @@ export const responsive = {
     items: 6,
   },
   desktop3: {
-    breakpoint: { max: 1700, min: 1450 },
+    breakpoint: { max: 1700, min: 1500 },
     items: 5,
   },
   desktop4: {
-    breakpoint: { max: 1450, min: 1200 },
+    breakpoint: { max: 1500, min: 1100 },
     items: 4,
   },
   desktop5: {
-    breakpoint: { max: 1200, min: 1024 },
+    breakpoint: { max: 1100, min: 850 },
     items: 3,
   },
   tablet: {
-    breakpoint: { max: 1024, min: 720 },
+    breakpoint: { max: 850, min: 480 },
     items: 2,
   },
   mobile: {
-    breakpoint: { max: 720, min: 0 },
+    breakpoint: { max: 480, min: 0 },
     items: 1,
   },
 };

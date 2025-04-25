@@ -1,4 +1,4 @@
-.movie-card{
+.movie-cards{
   width: 80%;
   aspect-ratio: 2 / 3; 
   background-size:cover;
@@ -7,15 +7,9 @@
   transition: 0.5s;
   border-radius: 10px;
   margin: 0 auto;
-  font-size: 1rem;
 }
 
-.movie-card:hover{
-  transform: scale(1.2) translateZ(20px);
-  z-index: 2;
-}
-
-.overlay{
+.over-lay{
   padding: 1em;
   width: 100%;
   height: 100%;
@@ -26,49 +20,28 @@
   color: white;
   font-weight: bold;
   overflow-wrap: break-word;
-  font-size: 0.9em;
   overflow: hidden;
 }
 
-.overlay:hover{
+.over-lay:hover{
   opacity: 1;
 }
 
-.title{
+.movie-title{
   padding-left: 0;
 }
 
-.genre{
-  padding: 7px 0;
+.movie-genre{
+  padding: 10px 0;
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
 }
 
-.ratings{
-  padding: 5px 0;
+.movie-ratings{
+  padding: 7px 0;
   display: flex;
   align-items: center;
   gap: 4px;
 }
 
-@media screen and (max-width: 650px){
-  .genre{
-    display: none;
-  }
-}
-
-@media screen and (max-width: 480px){
-  .genre, .ratings{
-    display: flex;
-  }
-  .movie-card{
-    font-size: 1rem;
-  }
-}
-
-@media screen and (max-width: 415px){
-  .genre{
-    display: none;
-  }
-}
