@@ -4,8 +4,10 @@ import { useParams } from 'react-router-dom';
 import { Alert, Badge } from 'react-bootstrap';
 import "./MovieDetailMobile.style.css";
 import { useMovieAgeQuery } from '../../../hooks/useMovieAge';
+import TrailerModal from '../../../common/Modal/TrailerModal';
 
 const MovieDetailWeb = () => {
+  const [modalShow, setModalShow] = React.useState(false);
 
   //id읽어오기
   const { id } = useParams();
@@ -71,8 +73,12 @@ const MovieDetailWeb = () => {
             </div>
           )}
         </div>
-        <div className='button-area'><button>트레일러 보기</button></div>
+        <div className='button-area'><button onClick={() => setModalShow(true)}>트레일러 보기</button></div>
       </div>
+      <TrailerModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
     </div>
   )
 }

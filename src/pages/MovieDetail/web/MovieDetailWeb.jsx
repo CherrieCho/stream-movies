@@ -6,10 +6,13 @@ import "./MovieDetailWeb.style.css";
 import { useMovieAgeQuery } from '../../../hooks/useMovieAge';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
+import TrailerModal from '../../../common/Modal/TrailerModal';
+import { useVideoQuery } from '../../../hooks/useMovieVids';
 
 const MovieDetailWeb = () => {
   const [isWide, setIsWide] = useState(window.innerWidth > 1392);
   const [isOpen, setIsOpen] = useState(false);
+  const [modalShow, setModalShow] = useState(false);
 
   //더보기-접기 버튼
   const handleOpenClick = () => {
@@ -69,6 +72,7 @@ const MovieDetailWeb = () => {
                 <div className='genre-badge'>{data.genres.map((item) =>  <Badge bg="danger">{item.name}</Badge>)}</div>
                 <div className='overview'><p className={`movie-description ${isOpen ? 'expanded' : ''}`}>{data.overview}</p></div>
                 {!isWide && <button onClick={handleOpenClick}>{isOpen? "닫기" : "더보기"}</button>}
+                <div className='trailer-button-area'><button className='trailer-button' onClick={() => setModalShow(true)}>트레일러 보기</button></div>
               </Grid>
               <Grid size={2}></Grid>
               <Grid 
@@ -83,6 +87,10 @@ const MovieDetailWeb = () => {
               </Grid>
           </Grid>
       </Box>
+      <TrailerModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
     </div>
   )
 }

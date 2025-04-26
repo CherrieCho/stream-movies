@@ -1,0 +1,31 @@
+.review-card{
+  border-bottom: 1px solid gray;
+  margin-top: 2rem;
+  padding: 1em;
+}
+
+.review-card div{
+  padding: 0.5em 0;
+}
+
+.review-card p{
+  margin: 0;
+}
+
+.review-card div:first-child{
+  font-weight: bold;
+  font-size: large;
+}
+
+.clamped{
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.expanded{
+  display: block;
+  overflow: visible;
+}
