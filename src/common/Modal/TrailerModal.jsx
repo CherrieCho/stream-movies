@@ -4,15 +4,13 @@ import Modal from 'react-bootstrap/Modal';
 import { useVideoQuery } from '../../hooks/useMovieVids';
 import { useParams } from 'react-router-dom';
 import YouTube from 'react-youtube';
+import "./TrailerModal.style.css";
 
 const TrailerModal = (show, onHide) => {
   const { id } = useParams();
   const {data, isLoading, isError, error} = useVideoQuery({id});
-  console.log(data);
 
   const opts = {
-    height: '390',
-    width: '640',
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
       autoplay: 1,
@@ -65,8 +63,8 @@ const TrailerModal = (show, onHide) => {
     >
       <Modal.Header closeButton/>
       <Modal.Body>
-        <div style={{textAlign: "center"}}>
-        <YouTube videoId={data.results[0].key} opts={opts} />
+        <div style={{textAlign: "center"}} className='video-container'>
+        <YouTube videoId={data.results[0]?.key} opts={opts} />
         </div>
       </Modal.Body>
     </Modal>
